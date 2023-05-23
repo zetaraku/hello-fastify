@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register src/index.ts",
+    "start:": "fastify start -r ts-node/register src/app.ts",
+    "start:dev": "fastify start -r ts-node/register src/app.ts --log-level=info --pretty-logs --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ."
   },
