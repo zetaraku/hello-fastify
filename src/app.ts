@@ -1,9 +1,9 @@
 import { FastifyPluginAsync } from 'fastify';
-import fastifySensiblePlugin from '@fastify/sensible';
+import sensiblePlugin from './plugins/sensible';
 import routesPlugin from './routes';
 
 const app: FastifyPluginAsync = async (fastify, options) => {
-  await fastify.register(fastifySensiblePlugin);
+  await fastify.register(sensiblePlugin);
 
   await fastify.register(routesPlugin);
 };
