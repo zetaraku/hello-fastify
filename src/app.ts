@@ -1,16 +1,11 @@
 import { FastifyPluginAsync } from 'fastify';
 import fastifySensiblePlugin from '@fastify/sensible';
+import routesPlugin from './routes';
 
 const app: FastifyPluginAsync = async (fastify, options) => {
   await fastify.register(fastifySensiblePlugin);
 
-  fastify.get('/', async (request, reply) => {
-    return { message: 'Hello world!' };
-  });
-
-  fastify.get('/418', async (request, reply) => {
-    throw fastify.httpErrors.imateapot();
-  });
+  await fastify.register(routesPlugin);
 };
 
 export default app;
