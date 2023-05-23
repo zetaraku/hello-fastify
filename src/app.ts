@@ -1,11 +1,12 @@
+import * as path from 'node:path';
 import { FastifyPluginAsync } from 'fastify';
-import sensiblePlugin from './plugins/sensible';
-import zodPlugin from './plugins/zod';
+import autoloadPlugin from '@fastify/autoload';
 import routesPlugin from './routes';
 
 const app: FastifyPluginAsync = async (fastify, options) => {
-  await fastify.register(sensiblePlugin);
-  await fastify.register(zodPlugin);
+  await fastify.register(autoloadPlugin, {
+    dir: path.join(__dirname, 'plugins'),
+  });
 
   await fastify.register(routesPlugin);
 };
