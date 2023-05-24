@@ -13,3 +13,8 @@ extends:
   - 'airbnb-typescript/base'
 plugins:
   - '@typescript-eslint'
+rules:
+  'no-void': 'off'
+  'arrow-body-style': 'off'
+  '@typescript-eslint/no-unused-vars': 'off'
+  '@typescript-eslint/require-await': 'off'
