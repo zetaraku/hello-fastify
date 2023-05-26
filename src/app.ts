@@ -14,4 +14,8 @@ const app: FastifyPluginAsync = async (fastify, options) => {
   });
 };
 
+export const options = {
+  jsonShorthand: false,
+};
+
 export default app;
