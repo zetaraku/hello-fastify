@@ -2,7 +2,8 @@ import { FastifyPluginAsync } from 'fastify';
 import { z } from 'zod';
 
 const routes: FastifyPluginAsync = async (fastify, options) => {
-  fastify.get('/', async (request, reply) => {
+  fastify.get('/', {
+  }, async (request, reply) => {
     return { message: 'Hello world!' };
   });
 
@@ -16,7 +17,8 @@ const routes: FastifyPluginAsync = async (fastify, options) => {
     return { message: `Hi ${request.query.name}!` };
   });
 
-  fastify.get('/418', async (request, reply) => {
+  fastify.get('/418', {
+  }, async (request, reply) => {
     throw fastify.httpErrors.imateapot();
   });
 };
