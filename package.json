@@ -6,9 +6,9 @@
   "scripts": {
     "start:": "fastify start -r ts-node/register src/app.ts",
     "start:dev": "fastify start -r ts-node/register src/app.ts --log-level=info --pretty-logs --watch",
-    "test": "tap --ts",
-    "test:watch": "tap --ts --reporter=list --watch",
-    "test:coverage": "tap --ts --coverage-report=lcov",
+    "test": "tap",
+    "test:watch": "tap --reporter=list --watch",
+    "test:coverage": "tap --coverage-report=lcov",
     "lint": "eslint ."
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
