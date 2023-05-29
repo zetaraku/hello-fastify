@@ -6,7 +6,9 @@
   "scripts": {
     "start:": "fastify start -r ts-node/register src/app.ts",
     "start:dev": "fastify start -r ts-node/register src/app.ts --log-level=info --pretty-logs --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tap --ts",
+    "test:watch": "tap --ts --reporter=list --watch",
+    "test:coverage": "tap --ts --coverage-report=lcov",
     "lint": "eslint ."
   },
   "author": "Raku Zeta <zetaraku@gmail.com>",
