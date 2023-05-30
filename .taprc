@@ -1,1 +1,2 @@
 ts: true
+coverage-map: coverage-map.js
