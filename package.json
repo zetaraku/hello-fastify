@@ -7,7 +7,7 @@
     "start:": "fastify start -r ts-node/register src/app.ts",
     "start:dev": "fastify start -r ts-node/register src/app.ts --log-level=info --pretty-logs --watch",
     "test": "tap",
-    "test:watch": "tap --reporter=list --watch",
+    "test:watch": "tap --reporter=specy --watch",
     "test:coverage": "tap --coverage-report=lcov",
     "lint": "eslint ."
   },
