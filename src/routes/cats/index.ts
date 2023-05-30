@@ -1,6 +1,6 @@
 import * as crypto from 'node:crypto';
 import { FastifyPluginAsync } from 'fastify';
-import { z } from 'zod';
+import * as z from 'zod';
 
 export const catSchema = z.object({
   id: z.string().uuid(),

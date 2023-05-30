@@ -1,6 +1,6 @@
 import { FastifyPluginAsync } from 'fastify';
 import fastifyPlugin from 'fastify-plugin';
-import { z } from 'zod';
+import * as z from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
 declare module 'fastify' {
