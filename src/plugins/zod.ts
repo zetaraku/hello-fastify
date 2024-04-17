@@ -1,10 +1,10 @@
-import { FastifyPluginAsync } from 'fastify';
+import { FastifyPluginAsync, FastifyTypeProvider } from 'fastify';
 import fastifyPlugin from 'fastify-plugin';
 import * as z from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
 declare module 'fastify' {
-  interface FastifyTypeProviderDefault {
+  interface FastifyTypeProviderDefault extends FastifyTypeProvider {
     readonly output: this['input'] extends z.Schema ? z.infer<this['input']> : unknown;
   }
 }
