@@ -8,7 +8,9 @@ export const catSchema = z.object({
   age: z.number().nonnegative().int().default(0),
 });
 
-const cats: z.infer<typeof catSchema>[] = [
+export type Cat = z.infer<typeof catSchema>;
+
+const cats: Cat[] = [
   { id: crypto.randomUUID(), name: 'Alice', age: 1 },
   { id: crypto.randomUUID(), name: 'Bob', age: 2 },
   { id: crypto.randomUUID(), name: 'Cindy', age: 3 },
