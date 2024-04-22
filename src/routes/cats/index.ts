@@ -59,7 +59,7 @@ const routes: FastifyPluginAsync = async (fastify, options) => {
 
     if (targetCat === undefined) throw fastify.httpErrors.notFound('That cat doesn\'t exist.');
 
-    await reply.send(targetCat);
+    await reply.status(200).send(targetCat);
   });
 
   fastify.patch('/:catId', {
@@ -72,7 +72,7 @@ const routes: FastifyPluginAsync = async (fastify, options) => {
   }, async (request, reply) => {
     const targetCat = cats.find((cat) => cat.id === request.params.catId);
 
-    if (targetCat === undefined) throw fastify.httpErrors.badRequest('That cat doesn\'t exist.');
+    if (targetCat === undefined) throw fastify.httpErrors.notFound('That cat doesn\'t exist.');
 
     Object.assign(targetCat, request.body);
 
@@ -88,7 +88,7 @@ const routes: FastifyPluginAsync = async (fastify, options) => {
   }, async (request, reply) => {
     const targetCatIndex = cats.findIndex((cat) => cat.id === request.params.catId);
 
-    if (targetCatIndex === -1) throw fastify.httpErrors.badRequest('That cat doesn\'t exist.');
+    if (targetCatIndex === -1) throw fastify.httpErrors.notFound('That cat doesn\'t exist.');
 
     cats.splice(targetCatIndex, 1);
 
